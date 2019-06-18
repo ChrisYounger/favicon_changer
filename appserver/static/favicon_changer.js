@@ -49,7 +49,7 @@ require([
 				body : '',
 				remote : false,
 				backdrop : true,
-				size : 500,
+				size : 450,
 				onShow : false,
 				onHide : false,
 				actions : false
