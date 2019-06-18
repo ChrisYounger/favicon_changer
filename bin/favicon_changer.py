@@ -1,4 +1,5 @@
 # Copyright (C) 2019 Chris Younger
+
 # https://192.168.1.11:8489/services/favicon_changer?icon=red
 # | rest splunk_server=local /services/favicon_changer icon=orange
 
@@ -9,8 +10,8 @@ class req(splunk.rest.BaseRestHandler):
         output = ""
         try:
             if "query" in self.request and "icon" in self.request['query'] and not self.request['query']['icon'] is None:
-                action = self.request['query']['icon']
-                src_folder = os.path.dirname( __file__ )
+                action = self.request['query']['icon'].replace("?output_mode=json","")
+                src_folder = os.path.join(os.path.dirname( __file__ ), "..", "appserver", "static")
                 dest_folder = os.path.join(os.environ['SPLUNK_HOME'], 'share','splunk', 'search_mrsparkle', 'exposed', 'img')
                 output += "Setting browser icon to: " + action + "\n"
                 if action == "original":

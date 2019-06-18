@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Set Browser Favicon</title>
+    <link rel="stylesheet" type="text/css" href="{{SPLUNKWEB_URL_PREFIX}}/static/build/css/bootstrap-enterprise.css" />
+    <link rel="stylesheet" type="text/css" href="{{SPLUNKWEB_URL_PREFIX}}/static/css/build/pages/dashboard-simple-bootstrap.min.css"/>
+    <meta name="referrer" content="never" />
+    <meta name="referrer" content="no-referrer" />
+    <style>
+
+    .dashboard-body {
+        padding-left:40px;
+        padding-top:40px;
+    }
+    .favicon_changer-code {
+        padding: 4px 6px;
+        font-size: 14px;
+    }
+    .favicon_changer-list {
+        max-width: 500px;
+        display: flex;
+    }
+    .favicon_changer-img-ico {
+        margin-bottom:10px;
+        cursor: pointer;
+        border: 1px solid transparent;
+        text-align: center;
+        padding: 4px;
+        min-width:100px;
+    }
+    .favicon_changer-img-ico:hover {
+        background-color: rgba(0,0,0,0.1);
+        border: 1px solid rgba(0,0,0,0.3);
+    }
+    .favicon_changer-img-ico img {
+        max-width: 42px;
+        padding: 6px;
+    }
+    </style>
+</head>
+
+<body class="simplexml locale-en" data-splunk-version="7.0.0" data-splunk-product="enterprise">
+    <header>
+        <a class="navSkip" href="#navSkip" tabindex="1">Screen reader users, click here to skip the navigation bar</a>
+        <div class="header splunk-header">
+            <div id="placeholder-splunk-bar">
+                <a href="{{SPLUNKWEB_URL_PREFIX}}/app/launcher/home" class="brand" title="splunk &gt; listen to your data">splunk<strong>&gt;</strong></a>
+            </div>
+            <div id="placeholder-app-bar"></div>
+        </div>
+        <a id="navSkip"></a>
+    </header>
+
+    <div class="dashboard-body container-fluid main-section-body ce_no_write_access ce_no_run_access ce_no_settings_access ce_no_git_access" data-role="main">
+        <p><strong>WARNING:</strong> Changing the browser favicon cause Splunk to periodically show "File integrity" warnings to alll Administrators. These can be safely dismissed. For this reason, changing the favicon is not recommended for production environments.<br /><br />
+        Changing the favicon will not be persisted after Splunk upgrades and the below process will need to be re-run.<br /><br /><br />
+
+        Click the icon below to set the favicon for this Splunk server.<br /></p>
+        <div class="favicon_changer-list">
+            <div class="favicon_changer-img-ico" data-ico="gray"><img src="{{SPLUNKWEB_URL_PREFIX}}/static/app/favicon_changer/gray.ico" /><br /><code class="favicon_changer-code">gray</code></div>
+            <div class="favicon_changer-img-ico" data-ico="red"><img src="{{SPLUNKWEB_URL_PREFIX}}/static/app/favicon_changer/red.ico" /><br /><code class="favicon_changer-code">red</code></div>
+            <div class="favicon_changer-img-ico" data-ico="pink"><img src="{{SPLUNKWEB_URL_PREFIX}}/static/app/favicon_changer/pink.ico" /><br /><code class="favicon_changer-code">pink</code></div>
+            <div class="favicon_changer-img-ico" data-ico="orange"><img src="{{SPLUNKWEB_URL_PREFIX}}/static/app/favicon_changer/orange.ico" /><br /><code class="favicon_changer-code">orange</code></div>
+            <div class="favicon_changer-img-ico" data-ico="green"><img src="{{SPLUNKWEB_URL_PREFIX}}/static/app/favicon_changer/green.ico" /><br /><code class="favicon_changer-code">green</code></div>
+            <div class="favicon_changer-img-ico" data-ico="lightgreen"><img src="{{SPLUNKWEB_URL_PREFIX}}/static/app/favicon_changer/lightgreen.ico" /><br /><code class="favicon_changer-code">lightgreen</code></div>
+            <div class="favicon_changer-img-ico" data-ico="blue"><img src="{{SPLUNKWEB_URL_PREFIX}}/static/app/favicon_changer/blue.ico" /><br /><code class="favicon_changer-code">blue</code></div>
+            <div class="favicon_changer-img-ico" data-ico="purple"><img src="{{SPLUNKWEB_URL_PREFIX}}/static/app/favicon_changer/purple.ico" /><br /><code class="favicon_changer-code">purple</code></div>
+            <div class="favicon_changer-img-ico" data-ico="yellow"><img src="{{SPLUNKWEB_URL_PREFIX}}/static/app/favicon_changer/yellow.ico" /><br /><code class="favicon_changer-code">yellow</code></div>
+        </div>
+
+        <p><br /><br />If you have a search-head cluster, its a good idea to set the same favicon for all the servers - This can be done either by navigating to each search head manually or by running the below command from the monitoring console and setting the <code class="favicon_changer-code">splunk_server=</code> argument (The monitoring console must be setup correctly to talk to all search heads.).<br /><br />
+        <code class="favicon_changer-code">| rest splunk_server=&lt;NAME_OF_SEARCH_HEAD&gt; /services/favicon_changer icon=&lt;ICON_COLOR_NAME&gt;</code></p>
+        
+    </div>
+	
+    <script src="{{SPLUNKWEB_URL_PREFIX}}/config?autoload=1" crossorigin="use-credentials"></script>
+    <script src="{{SPLUNKWEB_URL_PREFIX}}/static/js/i18n.js"></script>
+    <script src="{{SPLUNKWEB_URL_PREFIX}}/i18ncatalog?autoload=1"></script>
+    <script src="{{SPLUNKWEB_URL_PREFIX}}/static/build/simplexml/index.js"></script>
+	<script src="{{SPLUNKWEB_URL_PREFIX}}/static/app/favicon_changer/favicon_changer.js"></script>
+</body>
+</html>
