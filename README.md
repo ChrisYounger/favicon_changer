@@ -1,6 +1,6 @@
 # Browser Icon Changer (favicon)
 
-A simple app to change the Splunk browser icon. When you have many tabs open, spread across to different Splunk environments (e.g. Prod vs non-Prod), this makes it easier to differentiate what each tab is for. You may also want to differentiate dedicated Splunk management instances (e.g. monitoring console or cluster master) from your main search head/s.
+An app to change the Splunk browser icon. When you have many tabs open, spread across to different Splunk environments (e.g. Prod vs non-Prod), this makes it easier to differentiate what each tab is for. You may also want to differentiate dedicated Splunk management instances (e.g. monitoring console or cluster master) from your main search head/s.
 
 ![screenshot](https://raw.githubusercontent.com/ChrisYounger/favicon_changer/master/static/browser.png)
 
@@ -14,7 +14,7 @@ WARNING: Changing the browser icon will cause Splunk to periodically show a "Fil
 
 Copyright (C) 2019 Chris Younger I am a Splunk Professional Services consultant working for JDS Australia, in Brisbane Australia.
 
-[Source code](https://github.com/ChrisYounger/favicon_changer) | [Splunkbase](https://splunkbase.splunk.com/app/XXXX/) | [Questions, Bugs or Suggestions](https://answers.splunk.com/app/questions/XXXX.html) | [My Splunk apps](https://splunkbase.splunk.com/apps/#/author/chrisyoungerjds)
+[Source code](https://github.com/ChrisYounger/favicon_changer) | [Splunkbase](https://splunkbase.splunk.com/app/4556/) | [Questions, Bugs or Suggestions](https://answers.splunk.com/app/questions/4556.html) | [My Splunk apps](https://splunkbase.splunk.com/apps/#/author/chrisyoungerjds)
 
 
 
