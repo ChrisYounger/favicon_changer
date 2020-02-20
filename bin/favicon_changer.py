@@ -25,7 +25,7 @@ class req(splunk.rest.BaseRestHandler):
                     if not os.path.exists(os.path.join(dest_folder, 'favicon.ico.orig')):
                         shutil.copyfile(os.path.join(dest_folder, 'favicon.ico'), os.path.join(dest_folder, 'favicon.ico.orig'))
                     if os.path.exists(os.path.join(src_folder, action + '.ico')):
-                        os.chmod(os.path.join(dest_folder, 'favicon.ico'), 0644)
+                        os.chmod(os.path.join(dest_folder, 'favicon.ico'), 0o644)
                         shutil.copyfile(os.path.join(src_folder, action + '.ico'), os.path.join(dest_folder, 'favicon.ico'))
                         output += "SUCCESS: Changed icon.<br /><br />Hit CTRL-F5 to clear your browser cache and observe the change.\n"
                     else:
